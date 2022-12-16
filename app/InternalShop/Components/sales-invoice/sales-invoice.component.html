@@ -1,0 +1,224 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>company invoice - Bootdey.com</title>
+    <meta name="اضافة فاتورة بيع" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body> -->
+
+    <div class=" ">
+        <div class=" ">
+            <h1 class="page-title text-secondary-d1">
+                Invoice
+                <small class="page-info">
+                    <i class="fa fa-angle-double-right text-80"></i>
+                    ID: #111-222
+                </small>
+            </h1>
+
+            <div class="page-tools">
+                <div class="action-buttons">
+                    <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
+                        <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
+                        Print
+                    </a>
+                    <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="PDF">
+                        <i class="mr-1 fa fa-file-pdf-o text-danger-m1 text-120 w-2"></i>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container px-0">
+            <div class="row mt-4">
+                <div class="col-12 col-lg-12">
+                    <div class="row">
+                    </div>
+                    <!-- .row -->
+                    <hr class="row brc-default-l1 mx-n1 mb-4" />
+                    <!--  area Combobox  DrodDown Select  Date time -->
+                    <div class="row" style="direction: rtl;" [formGroup]="SalesInvoiceForm">
+                        <form class="example-form" style="direction:rtl">
+                            <mat-form-field>
+                                <label class="form-Lable">اسم المنتج:
+                                <input type="text" placeholder="ادخل اسم المنتج" [formControl]="myControl" matInput
+                                   [matAutocomplete]="auto" (change)="FuncGETProducQt()">
+                                </label>
+                                <mat-autocomplete #auto="matAutocomplete" [displayWith]="GetProductIDFromSearchText">
+                                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+                                        (focusout)="GetProductIDandSetIDINTEXT(); ">
+                                        {{option.prodouctName}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </mat-form-field>
+                        </form>
+                        <div class="col-sm-2">
+                            <label class="form-Lable"> الباركود:</label>
+
+                            <input type="number" id="TextSearchBarcode" formControlName="TextSearchBarcode"
+                                placeholder="SearchBarcode" class="form-controlOne" style="width:190px; "
+                                (keydown.enter)="GetProductbyBarcode();GetProductIDandSetIDINTEXT();">
+                        </div>
+
+                        <label style="color: black; font-size: medium; font-weight: bold;"
+                            class="fa-solid fa-arrow-left ">
+                            كمية المنتج = <i class="fas fa-arrow-from-bottom"></i>
+                            <label [ngStyle]="{'color':'red'}">
+                                {{GetProductQT}}
+                            </label>
+                        </label>
+                        <div class="col-sm-2">
+                            <label class="form-Lable">مبلغ الخصم:
+                                <input type="number" id="AMountDicount" formControlName="AMountDicount"
+                                    placeholder="مبلغ الخصم" class="form-controlOne">
+                            </label>
+                        </div>
+                        <div class="col-sm-2" >
+
+                            <label class="form-Lable"> الضريبه:
+                                <input type="number" id="Tax" formControlName="Tax" placeholder="الضريبه"
+                                    class="form-controlOne"></label>
+                        </div>
+
+                        <!-- /.col -->
+                        <div class="col-sm-2">
+                            <label class="form-Lable">الخصم:
+                                <input type="number" id="Discount" formControlName="Discount" placeholder="الخصم"
+                                    class="form-controlOne" (focusout)="CalcDiscountAmountandTotalPrice();">
+                            </label>
+                        </div>
+
+                        <div class="col-sm-2">
+
+                            <label class="form-Lable"> الاجمالى قبل الخصم:</label>
+                            <input type="number" id="TotalBDiscount" formControlName="TotalBDiscount"
+                                placeholder="الاجمالى قبل الخصم" class="form-controlOne" value=0>
+                            <!-- </div> -->
+                        </div>
+                        <div class="col-sm-2">
+
+                            <label class="form-Lable">المدفوع:<input type="number" id="AmountPaid"
+                                    formControlName="AmountPaid" placeholder="المدفوع" class="form-controlOne"
+                                    (focusout)="  GetRemainingAmount()">
+                            </label>
+                        </div>
+
+
+
+                        <div class="col-sm-2">
+
+                            <label class="form-Lable">المتبقى:<input type="number" id="RemainingAmount"
+                                    formControlName="RemainingAmount" placeholder="المتبقى" class="form-controlOne">
+                            </label>
+                        </div>
+
+                        <div class="col-sm-2">
+
+                            <label class="form-Lable">اجمالى السعر:<input type="number" id="TotalPrice"
+                                    formControlName="TotalPrice" placeholder="اجمالى السعر" class="form-controlOne">
+                            </label>
+                        </div>
+
+                        <br /> <br /> <br />
+                
+
+                        <div class="col-md-offset-2 col-md-4">
+                            <button type="button" class="btn btn-primary"
+                                (click)="ButtonaddNewItem();CounterAddNewElementFunc()">addNewItem</button>
+                        </div>
+
+                        <div>
+                            <a (click)="AddNewInvoiceSales();"
+                                class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0">save</a>
+                        </div>
+                        <!-- /.col -->
+                        <br /> <br /> <br /> <br /> <br />
+                        <div>
+                            <div class="table">
+                                <div class="row header blue">
+                                    <div class="cell">
+                                        #
+                                    </div>
+                                    <div class="cell" hidden>
+                                        ProdouctsID </div>
+                                    <div class="cell">
+                                        كمية المنتح
+                                    </div>
+                                    <div class="cell">
+                                        سعر البيع
+                                    </div>
+                                    <div class="cell">
+                                        اجمالى الصنف
+                                    </div>
+                                    <div class="cell" hidden>
+                                        TextNameCurrentQT </div>
+                                </div>
+                                <div class="row" tbody formArrayName="iSalesInvoice" *ngFor="let _iSalesInvoice of $any(SalesInvoiceForm.get('iSalesInvoice')).controls;  
+      index as i " [attr.data-index]="i">
+                                    <button type="button" class="btn btn-danger btn-sm pull-right" title="Delete"
+                                        (click)="removeSkillButtonClick(i)">-</button>
+
+                                    <div data-title="#" [formGroupName]="i">
+
+                                        <input type="number" id="{{'TextNameCounter'+i}}"
+                                            formControlName="TextNameCounter" [value]="CounterAddNewElement-1"
+                                            placeholder="number" class="form-controlTwo">
+                                    </div>
+
+                                    <div data-title="#" [formGroupName]="i">
+                                        <input type="number" id="{{'TextNameProdouctsID'+i}}"
+                                            formControlName="TextNameProdouctsID" placeholder="number"
+                                            class="form-controlTwo" hidden>
+                                    </div>
+
+                                    <div class=" " data-title="TextNameQuntity_Product" [formGroupName]="i">
+                                        <input type="number" id="{{'TextNameQuntity_Product'+i}}"
+                                            formControlName="TextNameQuntity_Product" [value]="i" placeholder="number"
+                                            class="form-controlTwo" (focusout)="CheckProductQTBeforeSelling();">
+                                    </div>
+                                    <div class=" " [formGroupName]="i">
+                                        <input type="number" id="{{'TextNameSellingPrice'+i}}"
+                                            formControlName="TextNameSellingPrice" placeholder="number"
+                                            class="form-controlTwo" (focusout)="CalcTotalAmountRow();">
+                                    </div>
+                                    <div class=" " [formGroupName]="i">
+                                        <input type="number" id="{{'TextNameTotalAmountRow'+i}}"
+                                            formControlName="TextNameTotalAmountRow" placeholder="number"
+                                            class="form-controlTwo">
+                                    </div>
+                                    <div class=" " [formGroupName]="i" hidden>
+                                        <input type="number" id="{{'TextNameCurrentQT'+i}}"
+                                            formControlName="TextNameCurrentQT" placeholder="number"
+                                            class="form-controlTwo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-b-2 brc-default-l2"></div>
+                <hr />
+
+                <div>
+                    <a (click)="UpdateQtProductafterselling()"
+                        class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0"> TESSSTY
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+<!-- </body>
+
+</html> -->

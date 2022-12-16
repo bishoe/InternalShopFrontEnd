@@ -1,0 +1,49 @@
+<!-- 
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/">
+     <meta charset="utf-8">
+  
+    <title>شاشة اضافة مخزن جديد!</title>
+  </head>
+  <body> -->
+
+
+<form [formGroup]="ManageStoreForm">
+  <div class="container register" dir="rtl" >
+    <div class="row ">
+        <div class="col-md-3 register-left">
+
+          <h3>Welcome</h3>
+            <p class="register-heading">شاشة اضافة مخزن جديد </p>
+           <!-- <input type="submit" name="" value="Login"/><br/>  -->
+        </div>
+        <div class="col-md-9 register-right" dir="rtl">
+        
+ <div class="tab-content" id="myTabContent" >
+                 <h3 class="register-heading" >اضافة مخزن جديد </h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-Lable">اسم مخزن *</label>
+<input type="text" class="form-control" placeholder="ادخل اسم مخزن " formControlName="ManageStorename" />
+                          </div>
+                          
+                          <input type="submit" class="btnRegister"    value="اضافة" (click)="ADDManageStore()"/>
+
+                    </div> 
+ 
+</div>
+</div>
+
+</div>
+</div>
+
+  </div>
+
+
+ </form>
+
+<!-- </body>
+</html>  -->

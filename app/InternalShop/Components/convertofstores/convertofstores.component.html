@@ -1,0 +1,84 @@
+ 
+ <form [formGroup]="ConvertofStoresForm">
+  <div class="container register" dir="rtl" >
+    <div class="row ">
+        <div class="col-md-3 register-left">
+            <h3>Welcome</h3>
+            <p class="register-heading">شاشة التحويلات بين المخازن </p>
+           <!-- <input type="submit" name="" value="Login"/><br/>  -->
+        </div>
+        <div class="col-md-9 register-right" dir="rtl">
+  <div class="tab-content" id="myTabContent" >
+ <h3 class="register-heading" >تحويلات المخازن </h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-Lable">الكميه *</label>
+<input type="number" class="form-control" placeholder="ادخل الكميه"formControlName="quantityProduct" />   
+
+
+<div class="form-group">
+  <label class="form-Lable">  المخزن المحول اليه *</label>
+  <select name="dropdownManageStoreIdTo" formControlName="dropdownManageStoreIdTo" class="form-control" (click)="GetAllStoreTo()">
+      <option [ngValue]="null" disabled>يرجى الاختيار</option>
+      <option *ngFor="let _fillDropdownMasterOFSTores of _FillDropdownMasterOFSTores" [ngValue]="_fillDropdownMasterOFSTores.manageStoreID">{{_fillDropdownMasterOFSTores.manageStorename}}</option>
+    </select>
+    <!-- <button type="submit" (click)="submit()">Submit</button> -->
+                          
+</div>
+                     
+ </div>
+
+</div>   
+
+
+
+<div class="col-md-6"><div class="form-group">
+  <label class="form-Lable">  المخزن المحول منه *</label>
+  <select name="dropdownManageStoreIdFrom" formControlName="dropdownManageStoreIdFrom" class="form-control" (click)="GetAllStoreFrom()">
+      <option [ngValue]="null" disabled>يرجى الاختيار</option>
+      <option *ngFor="let _fillDropdownMasterOFSTores_ of _FillDropdownMasterOFSTores" [ngValue]="_fillDropdownMasterOFSTores_.manageStoreID">{{_fillDropdownMasterOFSTores_.manageStorename}}</option>
+    </select>
+    <!-- <button type="submit" (click)="submit()">Submit</button> -->
+                          
+</div>
+<div class="form-group">
+  <label class="form-Lable">  المنتجات *</label>
+  <select   formControlName="dropdownProduct" class="form-control" (click)="FilldropdownProduct()">
+     <option [ngValue]="null" >يرجى الاختيار</option>
+     <option *ngFor="let fillObjectProudcts of _FillObjectProudcts" 
+     [ngValue]="fillObjectProudcts.prodouctsID">
+       {{fillObjectProudcts.prodouctName}}
+     </option>
+   </select>
+   <!-- <input formControlName="gETIDTOTEXTMasterOFSToresIdFrom" hidden readonly name="gETIDTOTEXTMasterOFSToresIdFrom" /> -->
+</div>
+
+<div class="form-group">
+ 
+  
+</div>
+<!-- <input type="text" formControlName="Trs"/> -->
+<div class="form-group">
+ <label class="form-Lable">الملاحظات *</label>
+<input type="text" formControlName="notes" name="branchMobile" class="form-control" placeholder=" الملاحظات *"   />      
+                    </div>
+                    <!-- <div class="form-group"> -->
+ <!-- <input type="text" class="form-control" placeholder="`Answer *" value="" /> -->
+                  <!-- </div> -->
+<input type="submit" class="btnRegister" (click)="AddConvertStore()"   value="اضافة" />
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+ 
+  </div>
+
+  
+ </form>
+ 
+<!-- </body>
+</html>  -->

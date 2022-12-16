@@ -1,0 +1,51 @@
+ 
+  <div class="container-scroller">
+    <!-- <app-navbar></app-navbar> -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- <app-sidebar></app-sidebar> -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+
+
+     <table    datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover"> 
+     
+      
+        <thead>
+          <tr>
+              <!-- <th>#</th>1st column -->
+             <th>#</th> 
+            <th>رقم القسم</th>
+            <th>اسم المنتج</th>
+             <th>الملاحظات</th>  
+             <th>الباركود</th> 
+             <th>تاريخ الاضافه</th>
+            <th><img src="assets/img/icons8-compose-48.png"></th>
+
+           </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let productesPagging of ProductesPagging">
+
+              <!-- <td>{{productesPagging.categoryProductId}}</td>     -->
+              <td>{{productesPagging.prodouctsID}}</td>       
+              <td>{{productesPagging.categoryProductId}}</td>   
+              <td>{{productesPagging.prodouctName}}</td>     
+  
+              <td>{{productesPagging.notes}}</td>     
+              <td>{{productesPagging.barCodeText}}</td>     
+              <td>{{productesPagging.DateAdd}}</td>     
+
+              <td>
+                <button class="btn btn-block btn-warning" 
+                [routerLink]="['/UpdateProducts/', productesPagging.prodouctsID]">Edit</button>
+            </td>
+
+           </tr>
+      </tbody>
+      
+
+      </table>
+    </div>
+    <!-- <app-footer></app-footer> -->
+</div>
+</div>

@@ -1,0 +1,53 @@
+ 
+<div [formGroup]="updatecategoriesForm"  class=""  >
+            <!-- <app-navbar></app-navbar> -->
+<div class="container-fluid page-body-wrapper">
+                <!-- <app-sidebar></app-sidebar> -->
+<div class="main-panel">
+<div class="content-wrapper">
+<table class="table table-striped">
+<thead class="table-striped">
+<tr>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="4">
+<div class="links">&nbsp;</div>
+</td>
+</tr>
+</tfoot>
+<tbody>
+<br />
+<tr>
+<td>
+<div class="input-group input-group-lg form-LableRtl">
+<div class="input-group-prepend">
+<span class="input-group-text" id="inputGroup-sizing-lg">اسم
+القسم</span>
+</div>
+ <input type="text" class="form-control" formControlName="categoryName"  aria-label="Large"
+ aria-describedby="inputGroup-sizing-sm">
+ </div>
+ </td>
+ <td>
+ <div class="input-group input-group-lg form-LableRtl">
+ <div class="input-group-prepend">
+ <span class="input-group-text" id="inputGroup-sizing-lg">#</span>
+ </div>
+ <!-- <input type="text" class="form-control"formControlName="categoryProductId" aria-label="Large"
+ aria-describedby="inputGroup-sizing-sm"
+  > -->
+ </div>
+ </td>
+ </tr>
+</tbody>
+</table>
+<br />
+<button class="btn btn-dark" (click)="UpdateCategories()">Save</button>
+                    </div>
+                    <!-- <app-footer></app-footer> -->
+                </div>
+            </div>
+        </div>
+ 

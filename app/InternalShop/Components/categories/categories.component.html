@@ -1,0 +1,70 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <base href="/">
+     <meta charset="utf-8">
+    <title>شاشة اضافة قسم جديد!</title>
+  </head>
+  <body> -->
+<form [formGroup]="CategoryForm" (ngSubmit)="AddCategoriesSubmit()">
+<div class="container register" dir="rtl" >
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <img src="../../../../assets/img/Branches.png" alt=""/>
+          <h3>Welcome</h3>
+          <p class="h3">شاشة اضافة قسم جديد </p>
+          <!-- <input type="submit" name="" value="Login"/><br/> -->
+      </div>
+      <div class="col-md-9 register-right" dir="rtl">
+          <div class="tab-content" id="myTabContent" >
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading">اضافة قسم جديد </h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label class="form-Lable" >اسم القسم  *</label>
+
+                              <input  name="CategoryName" type="text" class="form-control" 
+                              formControlName="CategoryName" placeholder=" اسم القسم*"
+                               />
+
+                                  <!-- <input  name="Categorydate" type="text" class="form-control" formControlName="FDate" placeholder=" اسم القسم*"
+                                 />
+                                <input  name="Categoryuser" type="text" class="form-control" placeholder=" اسم القسم*"
+                                formControlName="UsersID"/>   -->
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <input type="submit"   class="btnRegister"  value="اضافة"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <h3  class="register-heading">Apply as a Hirer</h3>
+                  <div class="row register-form">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="First Name *" value="" />
+                          </div>
+
+
+                          <div class="form-group">
+                              <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                          </div>
+
+
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+ 
+</form>
+<!-- </body>
+</html> -->
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->

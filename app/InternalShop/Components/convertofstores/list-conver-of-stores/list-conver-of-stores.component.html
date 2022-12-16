@@ -1,0 +1,41 @@
+<nav class="navbar">
+  
+  
+    <!-- <input class="form-control" type="text" name="convertofStores" [(ngModel)]="convertofStores" (ngModelChange)="Search()"
+  placeholder="اسم القسم"> -->
+  
+  
+   </nav> 
+  
+  <table class="table table-bordered" >
+    <thead>
+            <tr>
+              <th>المنتج</th>
+         <th (click)="sort('categoryName')">المنتج&nbsp;<i class="fa fa-sort"></i></th>
+        <th>المخزن</th>
+  
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let _convertofStoresPagging of convertofStoresPagging | orderBy: key: reverse | paginate :{itemsPerPage:5,currentPage:p};">
+  
+               
+                 <td>{{_convertofStoresPagging.prodouctName}}</td>       
+                <td>{{_convertofStoresPagging.quantityProduct}}</td>  
+                <td>{{_convertofStoresPagging.manageStorename}}</td>     
+    
+                <!-- <td>
+                  <button class="btn btn-block btn-warning" 
+                  [routerLink]="['/Updatecategories/', _convertofStoresPagging.categoryProductId]">Edit</button>
+              </td> -->
+  
+             </tr>
+        </tbody>
+        
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+        </table>
+      <!-- </div>
+       <app-footer></app-footer>  
+  </div>
+  </div> -->

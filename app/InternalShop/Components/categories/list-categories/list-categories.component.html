@@ -1,0 +1,41 @@
+<nav class="navbar">
+  
+  
+    <input class="form-control" type="text" name="categoryName" [(ngModel)]="categoryName" (ngModelChange)="Search()"
+  placeholder="اسم القسم">
+  
+  
+   </nav> 
+  
+  <table class="table table-bordered" >
+    <thead>
+            <tr>
+              <th>كود القسم</th>
+         <th (click)="sort('categoryName')">اسم القسم&nbsp;<i class="fa fa-sort"></i></th>
+        <th>تاريخ الانشاء</th>
+  
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categoriesPagging of CategoriesPagging | orderBy: key: reverse | paginate :{itemsPerPage:5,currentPage:p};">
+  
+               
+                 <td>{{categoriesPagging.categoryProductId}}</td>       
+                <td>{{categoriesPagging.categoryName}}</td>  
+                <td>{{categoriesPagging.dateAdd}}</td>     
+    
+                <td>
+                  <button class="btn btn-block btn-warning" 
+                  [routerLink]="['/Updatecategories/', categoriesPagging.categoryProductId]">Edit</button>
+              </td>
+  
+             </tr>
+        </tbody>
+        
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+        </table>
+      <!-- </div>
+       <app-footer></app-footer>  
+  </div>
+  </div> -->

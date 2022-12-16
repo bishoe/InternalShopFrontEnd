@@ -1,0 +1,59 @@
+<form class="example-form" style="direction:rtl"  form class="example-form" style="direction:rtl" [formGroup]="SalesInvoiceForm">
+    <mat-form-field>
+        <label class="form-Lable">اسم المنتج:
+        <input type="text" placeholder="ادخل اسم المنتج" [formControl]="myControl" matInput
+           [matAutocomplete]="auto"  >
+        </label>
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="GetProductIDFromSearchText">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+                (focusout)=" ChangeBarcoe();">
+                {{option.prodouctName}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>	<div data-title="#"  >
+     
+ </div>
+</form>
+ <button type="submit" (click)="ChangeBarcoe()">SUBSUB</button>
+
+<div fxLayout="column">
+    <div fxLayout="column">
+        
+        <br/>
+        <select placeholder="bc-element-type" [(ngModel)]="elementType">
+            <option value="svg">svg</option>
+            <option value="img">img</option>
+            <option value="canvas">canvas</option>
+        </select>
+        <br/>
+        <select placeholder="bc-format" [(ngModel)]="format">
+            <option *ngFor="let code of codeList" [value]="code">{{code}}</option>
+        </select>
+        <input  type="text" placeholder="bc-line-color" [(ngModel)]="lineColor" hidden>
+        <input  type="number" placeholder="bc-width" [(ngModel)]="width" hidden>
+        <input  type="number" placeholder="bc-height" [(ngModel)]="height" hidden>
+        <!-- <input type="checkbox" [(ngModel)]="displayValue" hidden>bc-display-value -->
+        <input  type="text" placeholder="bc-font-options" [(ngModel)]="fontOptions" hidden>
+        <input  type="text" placeholder="bc-font" [(ngModel)]="font"hidden>
+    </div>
+    <div fxLayout="column">
+        <input  type="text" placeholder="bc-text-align" [(ngModel)]="textAlign" hidden>
+        <input  type="text" placeholder="bc-text-position" [(ngModel)]="textPosition"hidden>
+        <input  type="number" placeholder="bc-text-margin" [(ngModel)]="textMargin"hidden>
+        <input  type="number" placeholder="bc-font-size" [(ngModel)]="fontSize"hidden>
+        <input  type="text" placeholder="bc-background" [(ngModel)]="background"hidden>
+        <input  type="number" placeholder="bc-margin" [(ngModel)]="margin"hidden>
+        <input  type="number" placeholder="bc-margin-top" [(ngModel)]="marginTop"hidden>
+        <input  type="number" placeholder="bc-margin-bottom" [(ngModel)]="marginBottom"hidden>
+        <input  type="number" placeholder="bc-margin-left" [(ngModel)]="marginLeft"hidden>
+        <input  type="number" placeholder="bc-margin-right" [(ngModel)]="marginRight"hidden>
+    </div>
+    <div fxLayout="column">
+        <ngx-barcode *ngFor="let bcValue of values" [bc-element-type]="elementType" [bc-value]="bcValue" [bc-format]="format" [bc-line-color]="lineColor"
+         [bc-width]="width" [bc-height]="height" [bc-display-value]="displayValue" [bc-font-options]="fontOptions" [bc-font]="font"
+         [bc-text-align]="textAlign" [bc-text-position]="textPosition" [bc-text-margin]="textMargin" [bc-font-size]="fontSize" [bc-background]="background"
+         [bc-margin]="margin" [bc-margin-top]="marginTop" [bc-margin-bottom]="marginBottom" [bc-margin-left]="marginLeft" [bc-margin-right]="marginRight"></ngx-barcode>
+    </div>
+
+<!-- </div>		<div><button (click)="printTest()">Print.js Angular Test</button></div> -->
+
