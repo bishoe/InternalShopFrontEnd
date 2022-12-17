@@ -62,6 +62,11 @@ export const navItems: INavData[] = [
         name: 'تعديل منتج',
         url: '/UpdateProducts/:prodouctsID'
       },
+      
+      {
+        name: 'المنتجات',
+        url: '/ListProducts'
+      },
       {
         name: 'التحويل بين المخازن',
         url: '/Convertofstores'

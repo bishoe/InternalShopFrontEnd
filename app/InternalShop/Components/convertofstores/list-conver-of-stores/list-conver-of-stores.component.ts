@@ -1,10 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs/internal/Subject';
-import { map } from 'rxjs/operators';
-import { IConvertofStores } from 'src/app/InternalShop/Classes/iconvertof-stores';
-import { ConvertofStoresService } from 'src/app/InternalShop/Services/ConvertofStores/ConvertofStoresService';
+ 
+ import { ConvertofStoresService } from 'src/app/InternalShop/Services/ConvertofStores/ConvertofStoresService';
 
 @Component({
   selector: 'app-list-conver-of-stores',
@@ -15,8 +12,7 @@ export class ListConverOfStoresComponent implements OnInit {
 
   constructor(private _ConvertofStoresService: ConvertofStoresService,public _Httpclient : HttpClient  ) { }
    p:number=1;
-   convertofStores:any; 
-   convertofStoresPagging:  any[]=[];
+    convertofStoresPagging:  any[]=[];
   public convertofStoresId: number;
 
 

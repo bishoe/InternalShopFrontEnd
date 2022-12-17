@@ -13,20 +13,15 @@ import { Subject } from 'rxjs';
 export class ListProductsComponent implements OnInit {
 
 
-  constructor(private productsSVCService: ProductsService,private renderer: Renderer2,private router: Router,private _activatedRoute: ActivatedRoute,private _URLPathModule : URLPathModule,public _Httpclient : HttpClient  ) { }
-
-  dtOptions: DataTables.Settings = {};//DataTable
-  dtTrigger: Subject<any> = new Subject();//DataTable
-  ProductesPagging:  any[]=[];
-  public prodouctsID: number;
+  constructor(private productsSVCService: ProductsService,private renderer: Renderer2 ,private _activatedRoute: ActivatedRoute, public _Httpclient : HttpClient  ) { }
+  p:number=1;
+  prodouctName:any;
+   ProductesPagging:  any[]=[];
+    prodouctsID: number;
 
   ngOnInit(): void {
   //Pagging //DataTable
-  this.dtOptions = {
-    pagingType: 'full_numbers',
-    pageLength: 5,
-    processing: true,
-   };
+ 
 
    this.productsSVCService.GetProductsAsync().subscribe(data => {
     this.ProductesPagging = data;
@@ -35,6 +30,26 @@ export class ListProductsComponent implements OnInit {
 //EnD Pagging
    } );
   }
+  Search(){
+    if(this.prodouctName == ""){
+this.ngOnInit();
+
+    }else{
+      this.prodouctName = this.
+      ProductesPagging.filter(res => {
+        return res.prodouctName.toLocaleLowerCase().match(this.prodouctName.toLocaleLowerCase());
+      })
+    }
+  }
+ 
+key: string ='prodouctsID';
+reverse:boolean =false;
+sort(key){
+this.key = key;
+this.reverse =!this.reverse;
+}
+
+
 
 }
 

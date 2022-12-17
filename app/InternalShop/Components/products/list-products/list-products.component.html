@@ -1,21 +1,20 @@
- 
-  <div class="container-scroller">
-    <!-- <app-navbar></app-navbar> -->
-    <div class="container-fluid page-body-wrapper">
-        <!-- <app-sidebar></app-sidebar> -->
-        <div class="main-panel">
-            <div class="content-wrapper">
+<nav class="navbar">
+  
+  
+  <input class="form-control" type="text" name="prodouctName" [(ngModel)]="prodouctName" (ngModelChange)="Search()"
+placeholder="اسم الفرع">
 
 
-     <table    datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover"> 
+ </nav> 
+     <table    class="table table-bordered"> 
      
       
         <thead>
           <tr>
               <!-- <th>#</th>1st column -->
              <th>#</th> 
-            <th>رقم القسم</th>
-            <th>اسم المنتج</th>
+             <th  (click)="sort('branchName')">اسم المنتج&nbsp;<i class="fa fa-sort"></i></th>          
+
              <th>الملاحظات</th>  
              <th>الباركود</th> 
              <th>تاريخ الاضافه</th>
@@ -24,7 +23,7 @@
            </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let productesPagging of ProductesPagging">
+          <tr *ngFor="let productesPagging of ProductesPagging   | orderBy: key: reverse | paginate :{itemsPerPage:5,currentPage:p};">
 
               <!-- <td>{{productesPagging.categoryProductId}}</td>     -->
               <td>{{productesPagging.prodouctsID}}</td>       
@@ -45,7 +44,4 @@
       
 
       </table>
-    </div>
-    <!-- <app-footer></app-footer> -->
-</div>
-</div>
+  
