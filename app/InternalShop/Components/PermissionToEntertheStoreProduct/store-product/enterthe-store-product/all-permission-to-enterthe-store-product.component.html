@@ -1,0 +1,36 @@
+<table class="table table-bordered" >
+    <nav class="navbar">
+        <input class="form-control" type="text" name="ProdouctName" [(ngModel)]="ProdouctName" (ngModelChange)="Search()"
+    placeholder="ProdouctName">
+    </nav> 
+    <thead>
+            <tr>
+                <!-- <th (click)="sort('permissionToEntertheStoreProductId')">permissionToEntertheStoreProductId&nbsp;<i class="fa fa-sort"></i></th> -->
+                <th>quantityProduct</th>
+                
+         <th (click)="sort('ProdouctName')">ProdouctName&nbsp;<i class="fa fa-sort"></i></th>
+         <th>quantityProduct</th>
+        <th>ManageStorename</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let  fillObjectProudcts of _fillObjectProudcts | orderBy: key: reverse | paginate :{itemsPerPage:5,currentPage:p};">
+  
+    
+     <td>{{fillObjectProudcts.permissionToEntertheStoreProductId}}</td>
+    <td>
+        {{fillObjectProudcts.quantityProduct}}
+    </td>
+    
+    <td>
+        {{fillObjectProudcts.prodouctName}}
+    </td>
+    
+    <td>
+        {{fillObjectProudcts.manageStorename}}
+    </td>
+    
+            </tr>
+        </tbody>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </table>
