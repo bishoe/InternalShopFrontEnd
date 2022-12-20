@@ -30,11 +30,11 @@ import { ManageStoreComponent } from './InternalShop/Components/manage-store/man
  import {AllUserManagementComponent} from './InternalShop/Components/Auth/all-user-management/all-user-management.component'
 import { BrancheByidComponent } from './InternalShop/Components/Reports/Reports/branche-byid/branche-byid.component';
 import { PermissionToEntertheStoreProductService } from './InternalShop/Services/PermissionToEntertheStoreProduct/permission-to-enterthe-store-product.service';
-import { PermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/permission-to-enterthe-store-product/permission-to-enterthe-store-product.component';
-
-import{AllPermissionToEntertheStoreProductComponent} from '../app/InternalShop/Components/PermissionToEntertheStoreProduct/permission-to-enterthe-store-product/all-permission-to-enterthe-store-product/all-permission-to-enterthe-store-product.component'
-import { TestyComponent } from './InternalShop/Components/testy/testy/testy.component';
+ 
+ import { TestyComponent } from './InternalShop/Components/testy/testy/testy.component';
 import { ListConverOfStoresComponent } from './InternalShop/Components/convertofstores/list-conver-of-stores/list-conver-of-stores.component';
+import { AllPermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component';
+import { PermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/permission-to-enterthe-store-product.component';
 const routes: Routes = [
   {
     path: '',

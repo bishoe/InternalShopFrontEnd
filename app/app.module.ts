@@ -74,7 +74,7 @@ import {
   SharedModule,
   SidebarModule,
   TabsModule,
-  UtilitiesModule,
+  UtilitiesModule ,
 } from '@coreui/angular';
 import { BrancheByidComponent } from './InternalShop/Components/Reports/Reports/branche-byid/branche-byid.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
@@ -86,12 +86,10 @@ import { ReportSalesinvoiceComponent } from './InternalShop/Components/Reports/R
 import { ReportManageStoreByidComponent } from './InternalShop/Components/Reports/Reports/report-manage-store-byid/report-manage-store-byid.component';
 import { ReportConvertofStoresByidComponent } from './InternalShop/Components/Reports/Reports/report-convertof-stores-byid/report-convertof-stores-byid.component';
 import { ReportReceivingpermissionByidComponent } from './InternalShop/Components/Reports/Reports/report-receivingpermission-byid/report-receivingpermission-byid.component';
-import { PermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/permission-to-enterthe-store-product/permission-to-enterthe-store-product.component'; // <- import PdfViewerModule
 import { AgGridModule } from 'ag-grid-angular';
-import { AllPermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/permission-to-enterthe-store-product/all-permission-to-enterthe-store-product/all-permission-to-enterthe-store-product.component';
 import { TestyComponent } from './InternalShop/Components/testy/testy/testy.component';
-
-
+import{PermissionToEntertheStoreProductComponent} from'./InternalShop/Components/PermissionToEntertheStoreProduct/store-product/permission-to-enterthe-store-product.component'
+import{AllPermissionToEntertheStoreProductComponent} from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component'
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
