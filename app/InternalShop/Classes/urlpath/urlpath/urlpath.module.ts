@@ -27,18 +27,20 @@ readonly EmployeesURL = 'https://localhost:44328/api/Employees' // Employees  ap
 
 readonly MasterProductsWarehouseURL = 'https://localhost:44328/api/ProductsWarehouse'   // MasterProductsWarehouse api
 
-readonly ProductsWarehouseURL: string = 'https://localhost:44328/api/ProductsWarehouse'  //api ProductsWarehouse
-readonly _ProductsWarehouseURL: string = 'https://localhost:44328/api/ProductsWarehouse/GetSellingPrice' //Get selling price
+readonly ProductsWarehouseURL ='https://localhost:44328/api/ProductsWarehouse'  //api ProductsWarehouse
+readonly _ProductsWarehouseURL ='https://localhost:44328/api/ProductsWarehouse/GetSellingPrice' //Get selling price
 
 readonly ProductsURL = 'https://localhost:44328/api/Products' // api Products
 
 readonly GetProductsByIdURL = 'https://localhost:44328/api/Products/GetProductsById' // api Products
 
-readonly GetProductbyBarcodeURL = 'https://localhost:44328/api/Products/GetProductbyBarcode' // api Products
+readonly GetProductbyBarcodeURL = 'https://localhost:44328/api/Products/GetProductbyBarcode/' // api Products
 
 readonly MasterSellProductsURL = '' //api MasterSellProducts
 
-readonly SalesInvoice = 'https://localhost:44328/api/Salesinvoice' //  api SellProducts
+readonly SalesInvoice = 'https://localhost:44328/api/Salesinvoice/' //  api SellProducts
+
+
 
 readonly ReportPermissionToEntertheStoreProduct ='https://localhost:44328/api/PermissionToEntertheStoreProduct/ReportPermissionToEntertheStoreProduct/'
 

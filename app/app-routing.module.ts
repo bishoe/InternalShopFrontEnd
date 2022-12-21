@@ -35,6 +35,7 @@ import { PermissionToEntertheStoreProductService } from './InternalShop/Services
 import { ListConverOfStoresComponent } from './InternalShop/Components/convertofstores/list-conver-of-stores/list-conver-of-stores.component';
 import { AllPermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component';
 import { PermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/permission-to-enterthe-store-product.component';
+import { AllSalesinvoiceComponent } from './InternalShop/Components/sales-invoice/all-salesinvoice/all-salesinvoice.component';
 const routes: Routes = [
   {
     path: '',
@@ -122,7 +123,12 @@ const routes: Routes = [
       {
         path: 'Salesinvoice',
         component: SalesInvoiceComponent
-      },  {
+      },
+      {
+        path: 'AllSalesinvoice',
+        component: AllSalesinvoiceComponent
+      }, 
+       {
         path: 'register',
         component: RegisterComponent
       },  {

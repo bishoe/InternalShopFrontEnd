@@ -89,7 +89,8 @@ import { ReportReceivingpermissionByidComponent } from './InternalShop/Component
 import { AgGridModule } from 'ag-grid-angular';
 import { TestyComponent } from './InternalShop/Components/testy/testy/testy.component';
 import{PermissionToEntertheStoreProductComponent} from'./InternalShop/Components/PermissionToEntertheStoreProduct/store-product/permission-to-enterthe-store-product.component'
-import{AllPermissionToEntertheStoreProductComponent} from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component'
+import{AllPermissionToEntertheStoreProductComponent} from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component';
+import { AllSalesinvoiceComponent } from './InternalShop/Components/sales-invoice/all-salesinvoice/all-salesinvoice.component'
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -104,7 +105,7 @@ const APP_CONTAINERS = [
 @NgModule({
   declarations: [AppComponent, ...APP_CONTAINERS, BarcodeComponent, BranchesComponent, ListBranchesComponent, UpdateBranchesComponent, CategoriesComponent, UpdatecategoriesComponent, ListCategoriesComponent, ConvertofstoresComponent, ListConverOfStoresComponent, UpdateConverOfStoresComponent, ManageStoreComponent, ProductsComponent, ListProductsComponent, UpdateProductsComponent, QuantityProducComponent,     
     AddnewInvoiceinMasterstoreComponent,
-    SalesInvoiceComponent, SuppliersComponent, BrancheByidComponent, CategoriesByidComponent, ReportDismissalnoticeByIdComponent, ReportProductByIdComponent, ReportProductsWarehouseByIdComponent, ReportSalesinvoiceComponent, ReportManageStoreByidComponent, ReportConvertofStoresByidComponent, ReportReceivingpermissionByidComponent, PermissionToEntertheStoreProductComponent, AllPermissionToEntertheStoreProductComponent, TestyComponent],
+    SalesInvoiceComponent, SuppliersComponent, BrancheByidComponent, CategoriesByidComponent, ReportDismissalnoticeByIdComponent, ReportProductByIdComponent, ReportProductsWarehouseByIdComponent, ReportSalesinvoiceComponent, ReportManageStoreByidComponent, ReportConvertofStoresByidComponent, ReportReceivingpermissionByidComponent, PermissionToEntertheStoreProductComponent, AllPermissionToEntertheStoreProductComponent, TestyComponent, AllSalesinvoiceComponent],
   imports: [
      BrowserAnimationsModule, URLPathModule,   HttpClientModule,     BrowserModule,FormsModule, ReactiveFormsModule,MatInputModule,MatFormFieldModule,
       MatSlideToggleModule,MatOptionModule,    DataTablesModule,NgxPaginationModule,

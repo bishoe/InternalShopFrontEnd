@@ -78,7 +78,9 @@ CreateSalesInvoice(
    }
   
   
- 
+   GETALLSalesinvoice() : Observable<any>{
+    return this._HttpClient.get<any>(this._URLPathModule.SalesInvoice).pipe(catchError(this.handleError));
+   }
  
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {

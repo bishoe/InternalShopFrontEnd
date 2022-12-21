@@ -94,6 +94,11 @@ export const navItems: INavData[] = [
         url: '/Salesinvoice'
       },
       {
+        name: 'فواتير بيع المنتجات',
+        url: '/AllSalesinvoice'
+      },
+      
+      {
         name: 'تسجيل مستخدم',
         url: '/register'
       },
