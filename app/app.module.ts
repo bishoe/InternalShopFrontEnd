@@ -90,8 +90,13 @@ import { AgGridModule } from 'ag-grid-angular';
 import { TestyComponent } from './InternalShop/Components/testy/testy/testy.component';
 import{PermissionToEntertheStoreProductComponent} from'./InternalShop/Components/PermissionToEntertheStoreProduct/store-product/permission-to-enterthe-store-product.component'
 import{AllPermissionToEntertheStoreProductComponent} from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component';
-import { AllSalesinvoiceComponent } from './InternalShop/Components/sales-invoice/all-salesinvoice/all-salesinvoice.component'
+import { AllSalesinvoiceComponent } from './InternalShop/Components/sales-invoice/all-salesinvoice/all-salesinvoice.component';
+import { AllquantityProductsComponent } from './InternalShop/Components/quantity-produc/allquantity-products/allquantity-products.component'
+import {LoginComponent} from '../app/InternalShop/Components/Auth/login/login.component'
 
+import {AllUserManagementComponent} from '../app/InternalShop/Components/Auth/all-user-management/all-user-management.component'
+import {UserManagementComponent } from '../app/InternalShop/Components/Auth/user-management/user-management.component';
+import { AllProductsWarehouseComponent } from './InternalShop/Components/addnew-invoicein-masterstore/all-products-warehouse/all-products-warehouse.component'
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
@@ -105,7 +110,12 @@ const APP_CONTAINERS = [
 @NgModule({
   declarations: [AppComponent, ...APP_CONTAINERS, BarcodeComponent, BranchesComponent, ListBranchesComponent, UpdateBranchesComponent, CategoriesComponent, UpdatecategoriesComponent, ListCategoriesComponent, ConvertofstoresComponent, ListConverOfStoresComponent, UpdateConverOfStoresComponent, ManageStoreComponent, ProductsComponent, ListProductsComponent, UpdateProductsComponent, QuantityProducComponent,     
     AddnewInvoiceinMasterstoreComponent,
-    SalesInvoiceComponent, SuppliersComponent, BrancheByidComponent, CategoriesByidComponent, ReportDismissalnoticeByIdComponent, ReportProductByIdComponent, ReportProductsWarehouseByIdComponent, ReportSalesinvoiceComponent, ReportManageStoreByidComponent, ReportConvertofStoresByidComponent, ReportReceivingpermissionByidComponent, PermissionToEntertheStoreProductComponent, AllPermissionToEntertheStoreProductComponent, TestyComponent, AllSalesinvoiceComponent],
+    SalesInvoiceComponent, SuppliersComponent, BrancheByidComponent, CategoriesByidComponent, ReportDismissalnoticeByIdComponent, ReportProductByIdComponent, ReportProductsWarehouseByIdComponent, ReportSalesinvoiceComponent, ReportManageStoreByidComponent, ReportConvertofStoresByidComponent, ReportReceivingpermissionByidComponent, PermissionToEntertheStoreProductComponent, AllPermissionToEntertheStoreProductComponent, TestyComponent, AllSalesinvoiceComponent, AllquantityProductsComponent,LoginComponent
+  ,
+  AllUserManagementComponent ,UserManagementComponent, AllProductsWarehouseComponent
+
+  
+  ],
   imports: [
      BrowserAnimationsModule, URLPathModule,   HttpClientModule,     BrowserModule,FormsModule, ReactiveFormsModule,MatInputModule,MatFormFieldModule,
       MatSlideToggleModule,MatOptionModule,    DataTablesModule,NgxPaginationModule,

@@ -1,0 +1,41 @@
+
+<nav class="navbar">
+    <div>
+  
+  
+  
+   
+  
+    </div>
+    
+      <input class="form-control" type="number" name="ProductName" [(ngModel)]="ProductName" (ngModelChange)="Search()"
+    placeholder="اسم المنتج" maxlength="4"pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" >
+    
+    
+     </nav> 
+    
+    <table class="table table-bordered" >
+      <thead>
+              <tr>
+                <th>المنتج</th>
+      
+           <th >كمية المنتج&nbsp;<i class="fa fa-sort"></i></th>
+           <th>المخزن</th>
+
+        </tr>
+          </thead>
+          <tbody>
+        <tr *ngFor="let _quantityProductsPagging of quantityProductsPagging  | orderBy: key: reverse | paginate :{itemsPerPage:5,currentPage:p};">
+                   <td>{{_quantityProductsPagging.prodouctName}}</td>       
+                  <td>{{_quantityProductsPagging.quntity_Product}}</td>  
+                  <td>{{_quantityProductsPagging.branchName}}</td>     
+  
+                  
+             
+    
+               </tr>
+          </tbody>
+          
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    
+          </table>

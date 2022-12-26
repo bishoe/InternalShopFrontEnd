@@ -308,8 +308,7 @@ CounterAddNewElementFunc() {
 }
 ///GETALLCategories
 GetAllCategories() {
-  this.Getcategories$ = this._CategoriesService.GeTCategoriesAsync();
-  this.Getcategories$.subscribe((GetAllMasterOFSTores) => {
+this._CategoriesService.GeTCategoriesAsync().subscribe((GetAllMasterOFSTores) => {
     this._GETALLCategories = GetAllMasterOFSTores
   })
 
@@ -319,8 +318,7 @@ GetAllCategories() {
 }
 ////GetAllProducts()
 GetAllProducts() {
-  this.GETALLProducts = this.productsSVCService.GetProductsAsync();
-  this.GETALLProducts.subscribe((TempGETALLProducts) => {
+  this.productsSVCService.GetProductsAsync().subscribe((TempGETALLProducts) => {
     this._GETALLProducts = TempGETALLProducts
   })
   //GETIDFromDropdownProdoucts
@@ -380,20 +378,15 @@ AddnewInvoice() {
         this.GetvalueFromTextNameReceivingpermissionId,
         this.AddnewInvoiceForm.get('invoice').value,
         this.CounterAddNewElement
-
-
-
-
-
-
-
         //  1,1,this.GETDate,false,1,1,1,1,1,this.AddnewInvoiceForm.get('invoice').value,5
       ).subscribe(
         (result) => {
           if (result.message == 'Added successfully') {
+            this.UpdateQtProductafterPurchases();
+
             Swal.fire({
               title: 'success !',
-              text: 'Added successfully',
+              text: 'تم الحفظ بنجاح',
               icon: 'success',
               confirmButtonText: 'success'
             });
@@ -586,7 +579,7 @@ FuncGETProducQt() {
 (error) => {
   Swal.fire({
     title: 'كمية المنتج 0!',
-    text: 'كمية المنتج صفر يرجى اعادة الشراء للمنتج  ',
+    text: 'كمية المنتج صفر يرجى اعادة الشراء للمنتج  '+ error.message,
     icon: 'question',
     confirmButtonText: 'موافق'
   });
@@ -617,7 +610,7 @@ UpdateQtProductafterPurchases(){
 const QuntityProduct_ProdouctsID = Number(localStorage.getItem("prodouctsID")); 
 const CurrentQTProduct =this.AddnewInvoiceForm.get('invoice').value[index]['TextNameCurrentQT']
 
-console.log(CurrentQTProduct);
+
 
 this.CurrentQTProduct = this.GetProductQT
 
@@ -633,7 +626,7 @@ CurrentQTProduct :CurrentQTProduct
 this._QuantityProductSVCService.UpdateQtProduct( QuntityProduct_ProdouctsID,_ObjectQuantityProduct )      .subscribe(
 response => {
   Swal.fire({
-    title: 'success !',
+    title: 'تم الحفظ بنجاح',
     text: ''+response,
     icon: 'success',
     confirmButtonText: 'info'

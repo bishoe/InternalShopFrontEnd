@@ -140,6 +140,10 @@ export const navItems: INavData[] = [
       },
       
       {
+        name: 'تسجيل الدخول',
+        url: '/Login'
+      },
+      {
         name: 'Reportbranchebyid',
         url: '/Reportbranchebyid'
       },

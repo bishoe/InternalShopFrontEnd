@@ -169,3 +169,22 @@
     border-radius: 0.25rem;
     /* transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
   }
+  .form-controlthree {
+    display: block;
+    width: 2.8cm;
+    margin-right:11px;
+ margin-left: 90px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* height: calc(1.5em + 0.75rem + 2px); */
+    padding: 6px 12px;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.0;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    /* transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
+  }

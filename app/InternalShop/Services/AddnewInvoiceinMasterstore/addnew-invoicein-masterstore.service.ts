@@ -89,6 +89,10 @@ GetQuantityProductBYIDsync (   ProdouctsID: number
   return this._HttpClient.get(`${this._URLPathModule.ProductsWarehouseURL}/${ProdouctsID}`).pipe(catchError(this.handleError));
 
  }
+
+ GetAllProductsWarehouse():Observable<any>{
+  return this._HttpClient.get<any>(this._URLPathModule.ProductsWarehouseURL).pipe(catchError(this.handleError));
+ }
   
  ReportProductsWarehouse (ProdouctsID:any,url: string
   ) : Observable<any> {

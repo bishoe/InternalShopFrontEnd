@@ -1,9 +1,19 @@
 
 <nav class="navbar">
+  <div>
+
+    <p>
+      No specified formatting:
+      {{pi | number:'2.0-2'}}
+      <!--output: '3.142'-->
+    </p>
+
+ 
+
+  </div>
   
-  
-    <input class="form-control" type="text" name="ProductName" [(ngModel)]="ProductName" (ngModelChange)="Search()"
-  placeholder="اسم المنتج">
+    <input class="form-control" type="number" name="ProductName" [(ngModel)]="ProductName" (ngModelChange)="Search()"
+  placeholder="اسم المنتج" maxlength="4"pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" >
   
   
    </nav> 

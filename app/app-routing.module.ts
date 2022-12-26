@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './containers';
 import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
-import { LoginComponent } from './views/pages/login/login.component';
+// import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
 import { ButtonToolbarComponent } from '@coreui/angular';
 import { CoreUIIconsComponent } from './views/icons/coreui-icons.component';
@@ -36,6 +36,8 @@ import { ListConverOfStoresComponent } from './InternalShop/Components/convertof
 import { AllPermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/enterthe-store-product/all-permission-to-enterthe-store-product.component';
 import { PermissionToEntertheStoreProductComponent } from './InternalShop/Components/PermissionToEntertheStoreProduct/store-product/permission-to-enterthe-store-product.component';
 import { AllSalesinvoiceComponent } from './InternalShop/Components/sales-invoice/all-salesinvoice/all-salesinvoice.component';
+
+import {LoginComponent} from '../app/InternalShop/Components/Auth/login/login.component'
 const routes: Routes = [
   {
     path: '',
@@ -204,13 +206,13 @@ component:AllPermissionToEntertheStoreProductComponent
       title: 'Page 500'
     }
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  //   data: {
+  //     title: 'Login Page'
+  //   }
+  // },
   {
     path: 'register',
     component: RegisterComponent,

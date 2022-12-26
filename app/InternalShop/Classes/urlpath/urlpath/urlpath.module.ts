@@ -27,7 +27,7 @@ readonly EmployeesURL = 'https://localhost:44328/api/Employees' // Employees  ap
 
 readonly MasterProductsWarehouseURL = 'https://localhost:44328/api/ProductsWarehouse'   // MasterProductsWarehouse api
 
-readonly ProductsWarehouseURL ='https://localhost:44328/api/ProductsWarehouse'  //api ProductsWarehouse
+readonly ProductsWarehouseURL ='https://localhost:44328/api/ProductsWarehouse/'  //api ProductsWarehouse
 readonly _ProductsWarehouseURL ='https://localhost:44328/api/ProductsWarehouse/GetSellingPrice' //Get selling price
 
 readonly ProductsURL = 'https://localhost:44328/api/Products' // api Products
@@ -69,6 +69,8 @@ readonly ReportReceivingpermissionUrl = 'https://localhost:44328/api/Receivingpe
 readonly QTProdouctURL = 'https://localhost:44328/api/QuantityProduct/GetQTProdouct'
 
 readonly QTProdoucProductBYIDmanageStoreURL ="https://localhost:44328/api/QuantityProduct/GetQuantityProductBYIDandmanageStoreIDAsync/"
+
+readonly GetAllquantityProducts ='https://localhost:44328/api/QuantityProduct/GetAllquantityProducts/'
 
 readonly UpdateQTafterSellingURL ='https://localhost:44328/api/QuantityProduct/UpdateQTafterSelling' //after selling
 

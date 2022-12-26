@@ -65,6 +65,12 @@ GetQuantityProductBYIDandmanageStoreIDAsync (manageStoreID:number,   ProdouctsID
 }));;
 
 }
+
+GetAllquantityProducts () :Observable<any>{
+    return this._Httpclient.get<any>(this._URLPathModule.GetAllquantityProducts).pipe(catchError(this.handleError));
+   }
+  
+   
 // UpdateQtProduct after selleing and purchases
 UpdateQtProduct(ProdouctsID :Number, _ObjectQuantityProduct: ObjectQuantityProduct){
   return this._Httpclient.put (`${this._URLPathModule.UpdateQTafterSellingURL}/${ProdouctsID}`,  _ObjectQuantityProduct,{
